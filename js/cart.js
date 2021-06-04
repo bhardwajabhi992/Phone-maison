@@ -60,7 +60,7 @@ function totalPrice(){
 function checkCard(){
     var cardNum = document.getElementById("cardNumber").value;
     if(cardNum==1234567890){
-        alert("Purchase Successful");
+        window.location.href = "confirmation.html";
     }
     else{
         alert("Please check the card number");
