@@ -43,5 +43,25 @@ function logout() {
     
 }
 function Submit() {
-    alert("Request Sent to Phone Masion executive");
+
+    var email = $('#email').val();
+    var subject = $('#subject').val();
+    var name = $('#name').val();
+    var message = $('#message').val();
+
+
+                firebase.database().ref('contactUs/' + name).set({
+                    'email': email,
+                    'subject': subject,
+                    'name': name,
+                    'message':message
+                }, (error) => {
+                    if (error) {
+                        alert(error);
+                    } else {
+                        alert("Request Sent to Phone Masion executive");
+                        window.location.reload();
+                    }
+                });
+
   }
